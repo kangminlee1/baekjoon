@@ -2,8 +2,7 @@ package baekjoon;
 import java.util.Scanner;
 import java.util.Stack;
 public class PSstack {
-	public static char[] arr;
-	public static int size=0;
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner in=new Scanner(System.in);
