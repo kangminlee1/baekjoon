@@ -7,7 +7,7 @@ public class baekjoon1920 {
 	
 	public static int binarySearch(int[] arr1, int n) {
 		int first=0;
-		int last=arr1.length-1;
+		int last=arr1.length-1;//마지막 인덱스
 		
 		while(first <= last) {
 			int mid=(first+ last)/2;//중간 위치
