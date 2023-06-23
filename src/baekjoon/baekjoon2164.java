@@ -18,7 +18,7 @@ public class baekjoon2164 {
 			que.poll();//맨앞 원소 제거
 			que.offer(que.poll());//맨 앞 원소 제거와 동시에 버려진 원소 맨 뒤 삽입
 		}
-		System.out.println(que.poll());//남은 원소 출력
+		System.out.println(que.peek());//남은 원소 출력
 	}
 
 }
