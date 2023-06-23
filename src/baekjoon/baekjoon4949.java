@@ -13,7 +13,7 @@ public class baekjoon4949 {
 			else if(c==')')
 			{
 				if(stack.empty()||stack.peek()!='(')
-					return "NO";
+					return "no";
 				else
 					stack.pop();
 					
@@ -21,15 +21,15 @@ public class baekjoon4949 {
 			else if(c==']')
 			{
 				if(stack.empty()||stack.peek()!='[')
-					return "NO";
+					return "no";
 				else
 					stack.pop();
 			}
 		}
 		if(stack.size()>0)
-			return "NO";
+			return "no";
 		else
-			return "YES";
+			return "yes";
 		
 	}
 
@@ -38,9 +38,9 @@ public class baekjoon4949 {
 		while(true) {
 			String str=in.nextLine();
 			
-			System.out.println(stacking(str));
-			
 			if(str.equals("."))break;
+			
+			System.out.println(stacking(str));
 		}
 		
 	}
