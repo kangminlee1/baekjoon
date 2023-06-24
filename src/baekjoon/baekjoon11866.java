@@ -13,7 +13,7 @@ public class baekjoon11866 {
 		int A=in.nextInt();
 		int B=in.nextInt();
 		
-		for(int i=1;i<=A;i++) {
+		for(int i=1;i<=A;i++) {//큐에 1~7까지 입력
 			que.offer(i);
 		}
 		System.out.print("<");
