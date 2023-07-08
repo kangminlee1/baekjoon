@@ -1,5 +1,5 @@
 package baekjoon;
-//미완성
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -15,7 +15,8 @@ public class baekjoon7795 {
 			int mid=(start+ last)/2;
 			
 			if(n>arr[mid]) {
-				count=mid;
+				count=mid+1;
+				//찾고자 하는 값으로 mid를 하지 않는 이유는 배열 인덱스가 0이기 떄문에 +1 해줌
 				start=mid+1;
 			}
 			else {
@@ -23,7 +24,7 @@ public class baekjoon7795 {
 			}
 			
 		}
-		return count+1;
+		return count;//다 탐색을 했으면 반환
 			
 	}
 
