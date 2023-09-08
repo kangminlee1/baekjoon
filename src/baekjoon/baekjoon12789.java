@@ -9,7 +9,7 @@ import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
 
-public class baekjoon12789 {//몇번수정함
+public class baekjoon12789 {//몇번수정함!
 
 
 	public static void main(String[] args) throws IOException {
