@@ -15,9 +15,12 @@ public class baekjoon2839 {
             System.out.println(N/5);
         else if(N%5==1||N%5==3)
             System.out.println(N/5+1);
+		//여기 까지는 맞았음
+		//다르게 해석하여 풀었지만 방향은 맞음
+		
         else if(N%5==2||N%5==4)
             System.out.println(N/5+2);
-		//이 조건은 다르게 풀어 하나 만족하지 못하는 것이 있었음
+		//이 조건은 다르게 풀어 하나 만족하지 못하는 것이 있었음 -> N%5==4
 	}
 
 	public static void main(String[] args) throws IOException {
