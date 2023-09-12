@@ -7,46 +7,49 @@ import java.util.StringTokenizer;
 
 import java.util.Deque;
 import java.util.ArrayDeque;
+import java.util.HashMap;
 
 public class baekjoon2346 {
 
 	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		/*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		Deque<int[]> deq = new ArrayDeque<>();
+		Deque<Integer> deq = new ArrayDeque<>();
+		HashMap<Integer, Integer> map = new HashMap<>();
 		
 		int N = Integer.parseInt(br.readLine());
-		
+		int[] arr=new int[N];
 		
 		StringTokenizer st = new StringTokenizer(br.readLine());		
 		for(int i=0;i<N;i++) {
-            int[] arr= {i+1,Integer.parseInt(st.nextToken())};
-			deq.add(arr);
+            arr[i]= Integer.parseInt(st.nextToken());
+			deq.add(arr[i]);
+			map.add(i+1, arr[i]);
 		}
 		
-		
-		
+				
 		StringBuilder sb = new StringBuilder();
+		sb.append(1).append(" ");
 		
-		while(deq.size()>1) {
-			int[] arr = deq.pollFirst();
-			sb.append(arr[0]).append(" ");
-			int count = arr[1];
+		int count = 1;
+		while(!deq.isEmpty()) {
 			
 			if(count>0) {
 				for(int i=1;i<count;i++) {
 					deq.add(deq.pollFirst());
 				}
+				sb.append(deq.poll()).append(" ");
 			}
 			else if(count<0) {
 				for(int i=1; i<-count;i++) {
 					deq.addFirst(deq.pollLast());
 				}
+				sb.append(deq.pollLast()).append(" ");
 			}
 		}
-		sb.append(deq.poll()[0]);
 		
 		System.out.println(sb);//실패함
+		*/
 		
 	}
 
