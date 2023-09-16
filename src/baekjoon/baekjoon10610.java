@@ -1,11 +1,50 @@
 package baekjoon;
-import java.util.Scanner;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class baekjoon10610 {
 
-	public static void main(String[] args) {
-		Scanner in=new Scanner(System.in);
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		String str = st.nextToken();
+		int[] arr = new int[str.length()];
+		
+		int totalSum = 0;
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < str.length();i++) {
+			arr[i] = str.charAt(i)-48;
+			totalSum += arr[i];
+		}
+		
+		Arrays.sort(arr);//정렬
+		
+		if(totalSum%3 == 0 && arr[0] == 0) {
+			for(int i = arr.length-1; i>=0;i--) {
+				sb.append(arr[i]);
+			}
+		}else {
+			sb.append(-1);
+		}
+		System.out.println(sb);
+	}
+
+}
+
+
+
+/*
+//처음 이해했을 떄는 charAt()을 활용하여 1글자씩 떼서 조합하여 푸는 문제로 인식
+//하지만 구글링을 통해 0이 1개라도 있고 자리수의 총합이 3의 배수일 때만 30의 배수가 가능하다는 것 인식
+//그 후 문자열로 입력을 받고 charAt()을 활용하여 배열의 값 저장 + 자리 수 총합 반복문으로 저장
+//배열을 정렬한 후 조건문으로 자리수 총합이 3의 배수이고 0이 1개라도 있을 경우에만 반복문으로 뒤에서부터 출력
+//자리수 총합이 3의 배수가 아니거나 0이 없을 경우에는 -1 출력
+ * Scanner in=new Scanner(System.in);
 		
 		String str=in.next();
 		int[] arr=new int[str.length()];
@@ -24,11 +63,6 @@ public class baekjoon10610 {
 		}else//자리수 총합이 3의 배수가 아니거나 0이 1개라도 없으면 불가
 			System.out.println(-1);
 		
-	}
-
-}
-//처음 이해했을 떄는 charAt()을 활용하여 1글자씩 떼서 조합하여 푸는 문제로 인식
-//하지만 구글링을 통해 0이 1개라도 있고 자리수의 총합이 3의 배수일 때만 30의 배수가 가능하다는 것 인식
-//그 후 문자열로 입력을 받고 charAt()을 활용하여 배열의 값 저장 + 자리 수 총합 반복문으로 저장
-//배열을 정렬한 후 조건문으로 자리수 총합이 3의 배수이고 0이 1개라도 있을 경우에만 반복문으로 뒤에서부터 출력
-//자리수 총합이 3의 배수가 아니거나 0이 없을 경우에는 -1 출력
+ * 
+ * 
+ */
