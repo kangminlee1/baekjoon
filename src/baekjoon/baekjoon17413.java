@@ -18,15 +18,9 @@ public class baekjoon17413 {
 		StringBuffer sb = new StringBuffer();
 		
 		while(st.hasMoreTokens()) {//다음에 재시도
-			if(st.equals("<")) {
-				stack.add('<');	
-			}else if(st.equals(">")){
-				stack.pop();
-			}
-			else {
 			StringBuffer temp = new StringBuffer(st.nextToken());
 			sb.append(temp.reverse()).append(" ");
-			}
+			
 		}
 		
 		System.out.println(sb);
