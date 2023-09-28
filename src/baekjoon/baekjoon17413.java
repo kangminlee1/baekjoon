@@ -13,15 +13,46 @@ public class baekjoon17413 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		Stack<Character> stack = new Stack<>();
-		
-		StringTokenizer st = new StringTokenizer(br.readLine());
+				
 		StringBuffer sb = new StringBuffer();
 		
-		while(st.hasMoreTokens()) {//다음에 재시도
-			StringBuffer temp = new StringBuffer(st.nextToken());
-			sb.append(temp.reverse()).append(" ");
+			boolean flag = false;
 			
+			String temp = br.readLine();
+			for(int i =0;i<temp.length();i++) {
+				if(temp.charAt(i)=='<') {
+					while(!stack.isEmpty()) {
+						sb.append(stack.pop());
+					}
+					flag = true;
+				}else if(temp.charAt(i)=='>') {
+					flag = false;
+					sb.append(temp.charAt(i));
+					continue;
+				}
+				
+				if(flag == true) {
+					sb.append(temp.charAt(i));
+				}
+				else if(flag == false) {
+					if(temp.charAt(i)==' ') {
+						while(!stack.isEmpty()) {
+							sb.append(stack.pop());
+						}
+						sb.append(' ');
+						continue;
+					}else
+					stack.push(temp.charAt(i));
+				}
+				
+				if( i == temp.length() -1) {
+					while(!stack.isEmpty()) {
+						sb.append(stack.pop());
+					}
+				}
 		}
+		
+		
 		
 		System.out.println(sb);
 	}
