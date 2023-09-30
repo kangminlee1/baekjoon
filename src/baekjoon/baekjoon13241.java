@@ -13,21 +13,34 @@ public class baekjoon13241 {
 	}
 	
 	public static long GCD(long x, long y) {//최대 공약수
-		long big = 0;
-		long small = 0;
-		if(x>y) {
-			big = x;
-			small = y;
+		if(x < y) {
+			long temp = x;
+			x = y;
+			y = temp;
 		}
-		if(x<y) {
-			big = y;
-			small = x;
+		while(y>0) {
+			long temp =y;
+			y= x%y;
+			x = temp;
 		}
-		if((big+small)%big==0)
-			return big;//이부분 실수
-		else
-			return GCD(small, big%small);
+		return x;
 	}
+	/*
+	 public static long GCD(){
+	 	if(x<y){
+	 	long temp =x;
+	 	x=y;
+	 	y=temp;
+	 	}
+	 	if(y==0){
+	 	return x;
+	 	}
+	 	return GCD(y,x%y);
+	 	
+	 }
+	 
+	 */
+	
 
 	public static void main(String[] args) throws IOException {
 		//유클리드 호제법 공부하며 푼 것
