@@ -11,50 +11,48 @@ public class baekjoon17413 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
 		Stack<Character> stack = new Stack<>();
-				
-		StringBuffer sb = new StringBuffer();
 		
-			boolean flag = false;
+		String str = br.readLine();
+		
+		boolean flag = false;// <인지 >인지 구분용
+		StringBuffer sb = new StringBuffer();
+		for(int i =0; i < str.length(); i++) {
+			if(str.charAt(i) == '<') {
+				flag = true;
+				while(!stack.isEmpty()) {
+					sb.append(stack.pop());
+				}
+			}
+			else if( str.charAt(i) == '>') {
+				flag = false;
+				sb.append(str.charAt(i));
+				continue;//이것 안해주면 다음조건에 나오는 flag == false일 떄 또 나옴
+			}
 			
-			String temp = br.readLine();
-			for(int i =0;i<temp.length();i++) {
-				if(temp.charAt(i)=='<') {
+			if(flag == true) {//<>안에 있는 것은 뒤집지 않고 출력
+				sb.append(str.charAt(i));
+			}else {//<>안에 있는 것이 아닌 경우 뒤집기
+				if(str.charAt(i)==' ') {//띄어 쓰기가 있을 경우
 					while(!stack.isEmpty()) {
 						sb.append(stack.pop());
 					}
-					flag = true;
-				}else if(temp.charAt(i)=='>') {
-					flag = false;
-					sb.append(temp.charAt(i));
-					continue;
+					sb.append(' ');//뒤집은 후 추가
+				}else {
+					stack.add(str.charAt(i));
 				}
-				
-				if(flag == true) {
-					sb.append(temp.charAt(i));
-				}
-				else if(flag == false) {
-					if(temp.charAt(i)==' ') {
-						while(!stack.isEmpty()) {
-							sb.append(stack.pop());
-						}
-						sb.append(' ');
-						continue;
-					}else
-					stack.push(temp.charAt(i));
-				}
-				
-				if( i == temp.length() -1) {
-					while(!stack.isEmpty()) {
-						sb.append(stack.pop());
-					}
-				}
+			}
+			
+			if(i == str.length()-1) {//마지막 자리일 경우
+				while(!stack.isEmpty()) {
+					sb.append(stack.pop());
+				}//모두 출력
+			}
 		}
 		
 		
-		
 		System.out.println(sb);
+		
 	}
 
 }
