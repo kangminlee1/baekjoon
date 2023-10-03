@@ -1,9 +1,70 @@
 package baekjoon;
-import java.util.Scanner;
+
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.io.BufferedReader;
+
 import java.util.Stack;
+
 public class baekjoon4949 {
+
 	
-	static String stacking(String str) {
+	public static String find(String str) {
+		Stack<Character> stack = new Stack<>();
+
+		for(int i = 0; i<str.length();i++) {
+			if(str.charAt(i)=='(') {
+				stack.push('(');
+			}else if(str.charAt(i)=='[') {
+				stack.push('[');
+			}
+			
+			if(str.charAt(i)==')') {
+				if(stack.isEmpty() || stack.peek()!='(') {
+					return "no";
+				}else {
+					stack.pop();
+				}
+			}
+			else if(str.charAt(i)==']') {
+				if(stack.isEmpty() || stack.peek()!='[') {
+					return "no";
+				}
+				else {
+					stack.pop();
+				}
+			}
+			
+		}
+		if(stack.isEmpty()) {
+			return "yes";
+		}else {
+			return "no";
+		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+		
+		StringBuffer sb = new StringBuffer();
+		while(true) {			
+			String str = br.readLine();
+			
+			if(str.equals(".")) {
+				break;
+			}
+			sb.append(find(str)).append("\n");
+		}
+		
+		System.out.println(sb);
+	}
+
+}
+
+
+
+/*
+ static String stacking(String str) {
 		Stack<Character> stack= new Stack<>();
 		
 		for(int i=0;i<str.length();i++) {
@@ -46,3 +107,4 @@ public class baekjoon4949 {
 	}
 
 }
+ */ 
