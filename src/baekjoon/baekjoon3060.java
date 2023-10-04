@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import java.util.StringTokenizer;
 
-public class baekjoon2993 {
+public class baekjoon3060 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
