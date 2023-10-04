@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import java.util.StringTokenizer;
 import java.util.HashSet;
-
+//실패 비스마스킹 사용문제임
 public class baekjoon11723 {
 	
 	public static HashSet<Integer> set = new HashSet<>();
