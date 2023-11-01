@@ -45,7 +45,7 @@ public class baekjoon2579 {
 
 
 /*
- * 반복문으로 해결하는 방법
+  반복문으로 해결하는 방법
  	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
