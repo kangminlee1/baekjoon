@@ -75,6 +75,9 @@ public class baekjoon1244 {
 			
 		for(int i=0; i<N;i++) {
 			System.out.print(arr[i] + " ");
+			if((i+1)%20==0) {
+				System.out.println();
+			}
 		}
 		
 		
