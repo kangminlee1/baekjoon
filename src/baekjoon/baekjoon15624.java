@@ -1,4 +1,5 @@
 package baekjoon;
+//피보나치7
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

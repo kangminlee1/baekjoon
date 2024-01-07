@@ -1,5 +1,5 @@
 package baekjoon;
-//학생번호
+//학생번호 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
