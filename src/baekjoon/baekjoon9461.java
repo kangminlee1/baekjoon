@@ -44,7 +44,7 @@ public class baekjoon9461 {
 	public static long pado(int N) {
 		
 		if(dp[N] == -1) {//탐색하지 않았을 때
-			dp[N] = dp[N-2] + dp[N-3];
+			dp[N] = pado(N-2) + pado(N-3);
 		}
 		
 		return dp[N];
